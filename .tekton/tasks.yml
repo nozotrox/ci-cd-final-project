@@ -14,7 +14,7 @@ spec:
       workingDir: $(workspaces.source.path)
       securityContext:
         runAsNonRoot: false
-        ruAsUser: 0
+        runAsUser: 0
       script: |
         #!/usr/bin/env sh
           set -eu
@@ -34,7 +34,8 @@ spec:
 ---
 apiVersion: tekton.dev/v1beta1
 kind: Task
-name: nose
+metadata:
+  name: nose
 spec:
   workspaces:
     - name: source
